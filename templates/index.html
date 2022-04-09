@@ -1,0 +1,37 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block common %}
+
+<style>
+body {
+  background-image: url('{% static 'images/Library-Management-System-1024x653.jpg' %}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style><center><br>
+    <h4 style="color: white;background-color: blue;width:150px;text-align: center"><a href="{% url 'view_all' %} " style="color: white">View All Books</a></h4></center>
+    <div class="card-group" style="width: 27rem;margin-left: 35%;box-shadow: 2px 2px 10px yellow">
+  <div class="card" style="width: 10rem;margin-top: 10%;box-shadow: 2px 2px 10px yellow">
+    <img  src="{% static 'images/admin.png' %}" class="card-img-top" alt="..." style="height: 200px;width: 200px">
+    <div class="card-body" style="text-align: center">
+      <p class="card-text"><a   href="{% url 'adminlogin' %}"><button type="button" class="btn btn-primary">Admin Login</button></a></p>
+
+  </div>
+  </div>
+  <div class="card" style="width: 13rem;margin-left:30px;margin-top: 10%;box-shadow: 2px 2px 10px yellow">
+    <img  src="{% static 'images/admin.png' %}" class="card-img-top" alt="..." style="height: 200px;width: 200px">
+    <div class="card-body" style="text-align: center">
+      <p class="card-text"><a   href="{% url 'adminsignup' %}"><button type="button" class="btn btn-primary">Admin SignUp</button></a></p>
+
+  </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+

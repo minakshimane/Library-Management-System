@@ -1,0 +1,35 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block common %}
+<style>
+body {
+  background-image: url('{% static 'images/Library-Management-System-1024x653.jpg' %}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style><center>
+<h2 style="background-color: lightgray">{{ message }}</h2>
+<form action="{% url 'saveadmin' %}" method="post" style="background-color: black;width: 550px;height: 250px;margin-top: 90px">
+{% csrf_token %}
+  <div class="mb-3">
+    <label  class="form-label" style="color: white">Email address</label>
+    <input type="email" class="form-control" name="email" >
+    <div  class="form-text">{% if msg %}
+                   {{ msg }}
+                       {% endif %}.</div>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label" style="color: white">Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form></center>
+ {% for x in messages %}
+        <h3 style="color: yellow;background-color:purple;font-size: 40px;font-family: Arial;text-align: center">
+            {{ x }}
+        </h3>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "common.html" %}
+{% load static %}
+{% block common %}
+    {% include "adminmenu.html" %}
+        <style>
+body {
+  background-image: url('{% static 'images/book.jpg' %}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+    <br><br><br>
+{{ name }}
+    <table align="center" border="0"  class="table table-dark" style="width: 500px" >
+        <tr align="center">
+            <th colspan="6" style="text-align: center;">
+                Book Details
+            </th>
+        </tr>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Edition</th>
+            <th>Publiction</th>
+            <th>delete</th>
+
+        </tr>
+        {% for x in data %}
+            <tr>
+            <td>
+                {{ x.ISBN }}
+            </td>
+            <td>
+                {{ x.title }}
+            </td>
+            <td>
+                {{ x.author }}
+            </td>
+            <td>
+                {{ x.edition }}
+            </td>
+            <td>
+                {{x.publication }}
+            </td>
+            <td><a href="{% url 'Book_delete' %}?un={{ name }}&mno={{ x.ISBN }}"><button class="btn btn-danger">Delete</button></a></td>
+            </tr>
+        {%endfor %}
+
+
+    </table>
+
+
+
+{% endblock %}

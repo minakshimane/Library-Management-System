@@ -1,0 +1,44 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block common %}
+{% include 'adminmenu.html' %}
+
+    <style>
+body {
+  background-image: url('{% static 'images/Books Background (1).jpg' %}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<center>
+{{ name }}
+<form method="post" action="{% url 'savebook' %}" style="background-color: black;width: 550px;height: 500px;margin-top: 50px">
+{% csrf_token %}
+  <div class="mb-3"  style="width: 500px">
+    <label  class="form-label" style="color: white">Enter ISBN</label>
+    <input type="text" class="form-control" name="l1">
+
+  </div>
+  <div class="mb-3"  style="width: 500px">
+    <label class="form-label" style="color: white">Entet Title</label>
+    <input type="text" class="form-control" name="l2">
+  </div>
+    <div class="mb-3"  style="width: 500px">
+    <label class="form-label" style="color: white">Enter Author</label>
+    <input type="text" class="form-control" name="l3">
+  </div>
+    <div class="mb-3"  style="width: 500px">
+    <label class="form-label" style="color: white">Entet Edition</label>
+    <input type="text" class="form-control" name="l4">
+  </div>
+    <div class="mb-3"  style="width: 500px">
+    <label class="form-label" style="color: white">Entet Puplication</label>
+    <input type="text" class="form-control" name="l5">
+  </div>
+<input type="hidden" value="{{ name }}" name="l6">
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</center>
+{% endblock %}

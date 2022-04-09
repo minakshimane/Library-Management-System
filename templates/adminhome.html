@@ -1,0 +1,16 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block common %}
+{% include 'adminmenu.html' %}
+<style>
+body {
+  background-image: url('{% static 'images/Books Background (1).jpg' %}');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<h1 style="text-align: center;background-color: pink;width: 350px;height: 70px;margin-top: 120px;margin-left: 40%;box-shadow: 2px 2px 10px red" > Welcome Admin</h1>
+    <h1 style="text-align: center;background-color:yellow;width: 350px;height: 70px;margin-left: 40%;box-shadow: 2px 2px 10px red" > {{ name }}</h1>
+
+{% endblock %}
